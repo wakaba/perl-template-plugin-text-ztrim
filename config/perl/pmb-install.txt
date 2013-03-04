@@ -1,0 +1,12 @@
+Test::More~0.98
+AppConfig~1.66
+Template::Plugin~2.7
+Path::Class~0.31
+HTML::Tagset~3.20
+Spiffy~0.31
+ExtUtils::MakeMaker~6.64
+HTML::Parser~3.69
+Unicode::EastAsianWidth~1.33
+Exporter::Lite~0.02
+Test::Base~0.60
+HTML::Trim~0.02
