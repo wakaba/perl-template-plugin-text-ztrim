@@ -8,11 +8,14 @@ use HTML::Trim;
 sub new {
     my ($self, $context, @args) = @_;
     my $name = $args[0] || 'ztrim';
-    $context->define_filter($name, sub {
-        my ($string, $width) = @_;
-        $width = $width * 2 || 60;
-        return HTML::Trim::vtrim($string, $width, "...");
-    }, 0);
+    $context->define_filter($name => [sub {
+        my ($context, $width) = @_;
+        $width = ($width || 30) * 2;
+        return sub {
+            my ($string) = @_;
+            return HTML::Trim::vtrim($string, $width, "...");
+        };
+    }, 1]);
     return $self;
 }
 
